@@ -14,15 +14,24 @@ import com.spring.book.service.BookService;
 public class BookController {
 	
 	@Autowired
-	BookService bookService;
+	BookService bookService;	
 	
 	@PostMapping("/store")
 	public ResponseEntity<String> storeData(@RequestBody BookEntity bookEntity){
 		
-		bookService.storeDB(bookEntity);
-	
+		boolean val = bookService.storeDB(bookEntity);
 		
-		return ResponseEntity.ok("Saved");
+		
+		
+		if(val==true) {
+			return ResponseEntity.ok("Saved");
+		}
+		
+		else {
+			return ResponseEntity.ok("Price Cannot be less than 0");
+		}
+
+		
 		
 		
 	}
