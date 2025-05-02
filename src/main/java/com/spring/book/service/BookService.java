@@ -42,20 +42,17 @@ public class BookService {
 		
 		System.out.println(existing.getBookISBN());
 		
+		System.out.println(existing.toString());
 		
-//		
-//		if(existing==null)
-//		{
-//			return false;
-//		}
-//		else {
-//		
-//		existing.setBookAuthour(bookDTO.getAuthor());
-//		existing.setBookGenre(bookDTO.getGenre());
-//		existing.setBookPrice(bookDTO.getPrice());
-//		existing.setBookTitle(bookDTO.getTitle());
-//		existing.setBookPublishedDate(bookDTO.getPublishedDate());
-//		}
+		System.out.println(bookDTO.toString());
+		
+		existing.setBookAuthour(bookDTO.getAuthor());
+		existing.setBookGenre(bookDTO.getGenre());
+		existing.setBookPrice(bookDTO.getPrice());
+		existing.setBookTitle(bookDTO.getTitle());
+		existing.setBookPublishedDate(bookDTO.getPublishedDate());
+		
+		bookRepo.save(existing);
 		return true;
 		        
 	}

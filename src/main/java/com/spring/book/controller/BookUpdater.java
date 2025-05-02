@@ -24,7 +24,6 @@ public class BookUpdater {
 		boolean updateBK = bookService.updateBK(id,bookDTO);
 		
 		
-		
 		if(updateBK==true) {
 			return ResponseEntity.ok("Partial Update done");
 		}

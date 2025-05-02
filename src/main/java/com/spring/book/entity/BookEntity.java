@@ -76,6 +76,14 @@ public class BookEntity {
 	public void setBookISBN(Integer bookISBN) {
 		this.bookISBN = bookISBN;
 	}
+
+	@Override
+	public String toString() {
+		return "BookEntity [bookTitle=" + bookTitle + ", bookAuthour=" + bookAuthour + ", bookPrice=" + bookPrice
+				+ ", bookGenre=" + bookGenre + ", bookPublishedDate=" + bookPublishedDate + ", bookISBN=" + bookISBN
+				+ "]";
+	}
+	
 	
 	
 	

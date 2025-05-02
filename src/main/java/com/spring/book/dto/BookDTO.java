@@ -40,8 +40,11 @@ public class BookDTO {
 		public void setPublishedDate(LocalDate publishedDate) {
 			this.publishedDate = publishedDate;
 		}
+		@Override
+		public String toString() {
+			return "BookDTO [title=" + title + ", author=" + author + ", price=" + price + ", genre=" + genre
+					+ ", publishedDate=" + publishedDate + "]";
+		}
 	    
-	    
-	
-
+	   
 }
