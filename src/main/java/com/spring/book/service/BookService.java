@@ -58,6 +58,25 @@ public class BookService {
 	}
 
 
+	public boolean deleteBookDb(Integer id) {
+		
+		Optional<BookEntity> byId = bookRepo.findById(id);
+		
+		if(byId.isEmpty()) {
+			
+			return false;
+			
+		}
+		
+		else {
+			bookRepo.deleteById(id);
+		}
+		
+		return true;
+		
+	}
+
+
 
 	
 
