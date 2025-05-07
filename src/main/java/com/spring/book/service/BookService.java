@@ -104,6 +104,24 @@ public class BookService {
 
 
 
+	public List<BookEntity> findBooksprice(Integer minPrice, Integer maxPrice) {
+		// TODO Auto-generated method stub
+		
+		return bookRepo.findByBookPriceBetween(minPrice, maxPrice);
+		
+	}
+
+
+
+	public List<BookEntity> findBooktitle(String bookTitle) {
+		// TODO Auto-generated method stub
+		
+		return bookRepo.findByBookAuthour(bookTitle);
+		
+	}
+
+
+
 	
 
 }
