@@ -36,16 +36,25 @@ public class BookFilterController {
 	}
 	
 	@GetMapping("/bookAuthor")
-	public ResponseEntity<List<BookEntity>> getBook(
-			
-			@RequestParam(required = false)String bookTitle
+	public ResponseEntity<List<BookEntity>> getBookByAuthor(
+	        @RequestParam(required = false) String author) {
+	    
+	    List<BookEntity> books = bookService.findBookByAuthor(author);
+	    return ResponseEntity.ok(books);
+	}
+	
+	
+	@GetMapping("/letter")
+	public ResponseEntity<List<BookEntity>> getBookByLetter(
+			@RequestParam(required = false)String prefix
 			){
+		List<BookEntity> byLetter = bookService.findByLetter(prefix);
 		
-		List<BookEntity> booktitle2 = bookService.findBooktitle(bookTitle);
+		return ResponseEntity.ok(byLetter);
 		
-		return ResponseEntity.ok(booktitle2);
 		
 	}
+
 		
 	
 }

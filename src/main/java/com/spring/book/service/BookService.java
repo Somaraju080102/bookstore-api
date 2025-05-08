@@ -113,12 +113,20 @@ public class BookService {
 
 
 
-	public List<BookEntity> findBooktitle(String bookTitle) {
+	public List<BookEntity> findBookByAuthor(String author) {
+	    return bookRepo.findByBookAuthour(author);  // assuming typo is intentional
+	}
+
+
+
+	public List<BookEntity> findByLetter(String prefix) {
 		// TODO Auto-generated method stub
 		
-		return bookRepo.findByBookAuthour(bookTitle);
+		List<BookEntity> byBookTitleStartingWithIgnoreCase = bookRepo.findByBookTitleStartingWithIgnoreCase(prefix);
+		return byBookTitleStartingWithIgnoreCase;
 		
 	}
+
 
 
 

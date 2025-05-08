@@ -19,8 +19,9 @@ public interface BookRepo extends JpaRepository<BookEntity, Integer> {
 	
 	List<BookEntity> findByBookPriceBetween(Integer min, Integer max);
 	
-	List<BookEntity> findByBookTitle(String bookTitle);
-
+	List<BookEntity> findByBookAuthour(String bookAuthour);
+	
+	List<BookEntity> findByBookTitleStartingWithIgnoreCase(String prefix);
 	
 	
 
